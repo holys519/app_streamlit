@@ -39,4 +39,16 @@ def detect_objects(filepath):
 import streamlit as streamlit
 st.title('物体検出アプリ')
 
-st.file_uploader ('choose as image...', type=['jpg', 'png'])
+uploaded_file = st.file_uploader ('choose as image...', type=['jpg', 'png'])
+if uploaded_file is not None:
+    Image.open(uploaded_file)
+    img_path = f'img/{upload_file.name}'
+    img.save(img_path)
+    st.image(img)
+
+
+
+
+
+    st.markdown('**認識されたコンテンツタグ**')
+    st.markdown('> apple, tree, building, green')
