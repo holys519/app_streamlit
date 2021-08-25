@@ -40,6 +40,7 @@ import streamlit as st
 from PIL import ImageDraw
 from PIL import ImageFont
 st.title('物体検出アプリ')
+st.text('物体')
 
 uploaded_file = st.file_uploader ('choose as image...', type=['jpg', 'png'])
 if uploaded_file is not None:
@@ -70,3 +71,29 @@ if uploaded_file is not None:
     tags_name = ','.join(tags_name)
     st.markdown('**認識されたコンテンツタグ**')
     st.markdown(f'> {tags_name}')
+
+import streamlit as st
+from streamlit_webrtc import webrtc_streamer
+
+webrtc_streamer(key="example")
+# import numpy as np
+# def main():
+#     selected_box = st.sidebar.selectbox(
+#         'Choose one of the following',
+#         ('Welcome','Image Processing', 'Video', 'Face Detection', 'Feature Detection', 'Object Detection')
+#         )
+#     if selected_box == 'Welcome':
+#             welcome() 
+#     if selected_box == 'Image Processing':
+#             photo()
+#     if selected_box == 'Video':
+#             video()
+#     if selected_box == 'Face Detection':
+#             face_detection()
+#     if selected_box == 'Feature Detection':
+#             feature_detection()
+#     if selected_box == 'Object Detection':
+#             object_detection()
+# if __name__ == "__main__":
+#     main()
+
